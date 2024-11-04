@@ -1,0 +1,5 @@
+const name = document.getElementById('name')
+const phone = document.getElementById('phone')
+const submit = document.getElementById('submit')
+const listName = document.getElementById('list-name')
+const listPhone= document.getElementById('list-phone')

@@ -22,6 +22,9 @@ submit.addEventListener(click, () => {
 contactList.appendChild(contactInfo);
 nameInput.value= '';
 phoneInput.value='';
-
+const changeBtn= document.getElementById('change-btn')
+const deleteBtn= document.querySelector('delete-btn')
+  changeBtn.addEventListener('click', () => editContact(contactInfo));
+        deleteBtn.addEventListener('click', () => contactInfo.remove());
     }
 })

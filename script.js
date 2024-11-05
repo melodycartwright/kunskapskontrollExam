@@ -1,4 +1,4 @@
-const nameInput = document.getElementById('name')
+/*const nameInput = document.getElementById('name')
 const phoneInput = document.getElementById('phone')
 const submit = document.getElementById('submit')
 const listName = document.getElementById('list-name')
@@ -27,4 +27,5 @@ const deleteBtn= document.querySelector('delete-btn')
   changeBtn.addEventListener('click', () => editContact(contactInfo));
         deleteBtn.addEventListener('click', () => contactInfo.remove());
     }
-})
+})*/
+

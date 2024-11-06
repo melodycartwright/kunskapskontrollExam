@@ -1,6 +1,6 @@
 /*const nameInput = document.getElementById('name')
 const phoneInput = document.getElementById('phone')
-const submit = document.getElementById('submit')
+
 const listName = document.getElementById('list-name')
 const listPhone= document.getElementById('list-phone')
 const contactInfo=document.getElementById('contact-form')
@@ -28,4 +28,11 @@ const deleteBtn= document.querySelector('delete-btn')
         deleteBtn.addEventListener('click', () => contactInfo.remove());
     }
 })*/
+const nameInput = document.getElementById('name')
+const phoneInput = document.getElementById('phone')
+const submit = document.getElementById('submit')
 
+submit.addEventListener('click', function(renderList) {
+    renderList.preventDefault();
+    alert('clicked submit')
+})

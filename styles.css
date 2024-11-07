@@ -1,8 +1,5 @@
-
-/*.boxes{border: 1px solid black;
-padding: 15px;
-display:inline-flex;
-width: 300px;
-
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
 }
-#buttons{ display: inline-flex;}*/

@@ -1,33 +1,4 @@
-/*const nameInput = document.getElementById('name')
-const phoneInput = document.getElementById('phone')
 
-const listName = document.getElementById('list-name')
-const listPhone= document.getElementById('list-phone')
-const contactInfo=document.getElementById('contact-form')
-const contactList = document.getElementById ('contact-list')
-
-submit.addEventListener(click, () => {
-
-    const name= nameInput.value.trim();
-    const phone = phoneInput.value.trim();
-
-    if (name && phone) {
-        contactInfo.innerHTML =
-         <div id="list-name"> ${name}</div>
-        <div id="list-phone">${phone} </div>
-        <div id="buttons">
-    <button id="change-btn">Ändra</button>
-            <button id="delete-btn">Radera</button>
-            </div>;
-contactList.appendChild(contactInfo);
-nameInput.value= '';
-phoneInput.value='';
-const changeBtn= document.getElementById('change-btn')
-const deleteBtn= document.querySelector('delete-btn')
-  changeBtn.addEventListener('click', () => editContact(contactInfo));
-        deleteBtn.addEventListener('click', () => contactInfo.remove());
-    }
-})*/
 const nameInput = document.getElementById('name');
 const phoneInput = document.getElementById('phone');
 const submit = document.getElementById('submit');
@@ -97,32 +68,39 @@ changeBtn.addEventListener('click',function() {
   contactInfo.replaceChild(nameChangeInput, listedName);
   contactInfo.replaceChild (phoneChangeInput, listedNumber);
 contactInfo.appendChild(cancelBtn);
+        changeBtn.addEventListener('click', function saveChanges() {
+     
+            listedName.innerText = nameChangeInput.value;
+            listedNumber.innerText = phoneChangeInput.value;
 
-changeBtn.addEventListener('click', function saveChanges(){
-
-    listedName.innerText= nameChangeInput.value;
-    listedNumber.innerText= phoneChangeInput.value;
-
-    contactInfo.replaceChild(listedName, nameChangeInput);
-    contactInfo.replaceChild (listedNumber, phoneChangeInput);
-
-    changeBtn.innerHTML='<p>Ändra</p>';
-    cancelBtn.remove();
-
-    changeBtn.removeEventListener('click', saveChanges);
-});
-  cancelBtn.addEventListener('click', function () {
         
+            contactInfo.replaceChild(listedName, nameChangeInput);
+            contactInfo.replaceChild(listedNumber, phoneChangeInput);
+
+            changeBtn.innerHTML = '<p>Ändra</p>';
+            cancelBtn.remove();
+
+
+            changeBtn.removeEventListener('click', saveChanges);
+        });
+
+       
+        cancelBtn.addEventListener('click', function () {
+
             contactInfo.replaceChild(listedName, nameChangeInput);
             contactInfo.replaceChild(listedNumber, phoneChangeInput);
 
           
             changeBtn.innerHTML = '<p>Ändra</p>';
             cancelBtn.remove();
-        }); });
-deleteBtn.addEventListener('click', function(){
-mainSection.removeChild(contactList);
-});});
+        });
+    });
+
+ 
+    deleteBtn.addEventListener('click', function () {
+        mainSection.removeChild(contactList);
+    });
+});
 
 
  

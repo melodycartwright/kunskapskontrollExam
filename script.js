@@ -35,4 +35,31 @@ const submit = document.getElementById('submit')
 submit.addEventListener('click', function(renderList) {
     renderList.preventDefault();
     alert('clicked submit')
+
+    const contactList = document.createElement ('div');
+    contactList.className='contact-list';
+
+    const contactInfo = document.createElement('ul');
+    contactInfo.className='contact-info';
+
+    const listedName = document.createElement ('li');
+    listedName.className= 'listed-name';
+
+    const listedNumber= document.createElement('li');
+    listedNumber.className='listed-number';
+    const changeBtn= document.createElement('button');
+    changeBtn.classname='change-btn';
+    changeBtn.innerHTML= '<p> Ändra </p>';
+    const deleteBtn= document.createElement('button');
+    deleteBtn.classname='delete-btn';
+    deleteBtn.innerHTML= '<p> Radera </p>';
+    contactList.appendChild(contactInfo);
+    contactInfo.appendChild(listedName);
+    contactInfo.appendChild(listedNumber);
+    contactInfo.appendChild(changeBtn);
+    contactInfo.appendChild(deleteBtn);
+    document.getElementById('main-section').appendChild(contactList);
+
+
+    console.log(contactList);
 })

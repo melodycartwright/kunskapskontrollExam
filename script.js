@@ -48,6 +48,7 @@ submitButton.addEventListener('click', function (e) {
 
  
     const deleteButton = document.createElement('button');
+    deleteButton.className=('delete-btn')
     deleteButton.textContent = 'Radera';
     deleteButton.addEventListener('click', function () {
         mainSection.removeChild(contactDiv);

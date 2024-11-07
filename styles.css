@@ -1,5 +1,16 @@
+#main-section { display: block;
+text-align: center;
+background-color: rgb(225, 174, 223);
+width: 900px;
+height: 900px;
+margin: 0 auto;
+padding-top:60px;}
+
 .error-message {
     color: red;
     font-size: 14px;
     margin-top: 5px;
 }
+button{color: rgb(84, 7, 102);
+background-color: rgb(244, 201, 243);}
+.delete-btn{ color: red;}

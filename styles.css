@@ -58,6 +58,8 @@ input:focus {
 #clear-all {
     border-radius: 5px;
 }
+#clear-all:hover{background-color: red;
+    color: white;}
 
 .error-message {
     color: red;

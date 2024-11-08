@@ -1,28 +1,28 @@
-
 const nameInput = document.getElementById('name');
 const phoneInput = document.getElementById('phone');
 const submitButton = document.getElementById('submit');
-const mainSection = document.getElementById('main-section');
 const messageContainer = document.getElementById('message-container');
 
 
-submitButton.addEventListener('click', function (e) {
-    e.preventDefault();
+const contactListContainer = document.createElement('div');
+contactListContainer.id = 'contact-list-container';
+document.getElementById('main-section').appendChild(contactListContainer);
 
-    messageContainer.textContent = '';
 
-    const name = nameInput.value.trim();
-    const phone = phoneInput.value.trim();
+const clearAllButton = document.getElementById('clear-all');
+submitButton.parentNode.appendChild(clearAllButton);
 
-    if (!name || !phone) {
-        messageContainer.textContent = 'Please enter both name and phone number';
-        return;
-    }
 
+function displayValidationMessage(message) {
+    messageContainer.textContent = message;
+   
+}
+
+
+function createContact(name, phone) {
     const contactDiv = document.createElement('div');
     contactDiv.classList.add('contact');
 
-   
     const nameField = document.createElement('input');
     nameField.value = name;
     nameField.disabled = true;
@@ -31,37 +31,66 @@ submitButton.addEventListener('click', function (e) {
     phoneField.value = phone;
     phoneField.disabled = true;
 
-  
     const editButton = document.createElement('button');
     editButton.textContent = 'Ändra';
+
     editButton.addEventListener('click', function () {
         if (nameField.disabled) {
             nameField.disabled = false;
             phoneField.disabled = false;
             editButton.textContent = 'Spara';
         } else {
+
+            if (!nameField.value.trim() || !phoneField.value.trim()) {
+                displayValidationMessage('Får ej skapa tom kontakt');
+                return;
+            }
             nameField.disabled = true;
             phoneField.disabled = true;
             editButton.textContent = 'Ändra';
+            messageContainer.textContent = ''; 
         }
     });
 
- 
     const deleteButton = document.createElement('button');
-    deleteButton.className=('delete-btn')
     deleteButton.textContent = 'Radera';
+    deleteButton.classList.add('delete-btn');
+
     deleteButton.addEventListener('click', function () {
-        mainSection.removeChild(contactDiv);
+        contactListContainer.removeChild(contactDiv);
     });
 
- 
     contactDiv.appendChild(nameField);
     contactDiv.appendChild(phoneField);
     contactDiv.appendChild(editButton);
     contactDiv.appendChild(deleteButton);
 
-   
-    mainSection.appendChild(contactDiv);
+    contactListContainer.appendChild(contactDiv);
+}
+
+
+submitButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    messageContainer.textContent = '';
+
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+
+    if (!name || !phone) {
+        displayValidationMessage('Fyll i namn och nummer');
+        return;
+    }
+
+    createContact(name, phone);
+
     nameInput.value = '';
     phoneInput.value = '';
 });
+
+
+function clearAllContacts() {
+    contactListContainer.innerHTML = '';
+}
+
+
+clearAllButton.addEventListener('click', clearAllContacts);

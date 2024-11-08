@@ -1,16 +1,92 @@
-#main-section { display: block;
-text-align: center;
-background-color: rgb(225, 174, 223);
-width: 900px;
-height: 900px;
-margin: 0 auto;
-padding-top:60px;}
+body {
+    margin: 0 auto;
+    padding: 30px;
+}
+
+#main-section {
+    display: block;
+    text-align: center;
+    background-color: rgb(255, 251, 255);
+    border: 28px solid rgb(246, 191, 228);
+    width: 900px;
+    height: 600px;
+    margin: 0 auto;
+    padding-top: 25px;
+    border-radius: 5px;
+    
+}
+
+.title {
+    color: white;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(246, 191, 228);
+    padding: 10px;
+    width: 544px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 26px;
+    margin-bottom: 26px;
+}
+
+input {
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input:focus {
+    border-color: rgb(246, 191, 228);
+
+    box-shadow: 0 0 5px rgb(246, 130, 207);
+
+}
+
+#button-container {
+    display: inline;
+
+
+}
+
+#submit {
+    border-radius: 5px;
+}
+
+#clear-all {
+    border-radius: 5px;
+}
 
 .error-message {
     color: red;
     font-size: 14px;
     margin-top: 5px;
 }
-button{color: rgb(84, 7, 102);
-background-color: rgb(244, 201, 243);}
-.delete-btn{ color: red;}
+
+button {
+    color: white;
+    background-color: rgb(246, 191, 228);
+    border: 1px solid rgb(246, 191, 228);
+
+    border-radius: 5px;
+}
+
+.delete-btn {
+    color: red;
+
+}
+
+.delete-btn:hover {
+    background-color: red;
+    color: white;
+}
+
+button:hover {
+    background-color: white;
+    color: rgb(246, 191, 228);
+    transition: background-color 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+    border-radius: 5px;
+}
